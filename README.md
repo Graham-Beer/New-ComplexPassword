@@ -8,8 +8,8 @@ to the admin team.
 integer parameters. Refering to the MSDN documentation, it explains the usage of both parameters and the output value:
 
 
-*length*
-*Type: System.Int32*
+*length
+*Type: System.Int32
 > The number of characters in the generated password. The length must be between 1 and 128 characters. 
 
 *numberOfNonAlphanumericCharacters*
