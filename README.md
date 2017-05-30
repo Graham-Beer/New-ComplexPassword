@@ -24,5 +24,5 @@ To generate a single password simple pass the password length and number of spec
 ```New-ComplexPassword -PasswordLength 8 -SpecialCharCount 1```
 
 To generate multiple passwords, pass strings or integers across the pipeline:  
-```PS > 1,2,3,4 | New-ComplexPassword -PasswordLength 16 -SpecialCharCount 5```
+```PS > 1,2,3,4 | New-ComplexPassword -PasswordLength 16 -SpecialCharCount 5```  
 ```PS > 'John','Paul','George','Ringo' | New-ComplexPassword -PasswordLength 10 -SpecialCharCount 2```
