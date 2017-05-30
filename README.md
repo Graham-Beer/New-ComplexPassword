@@ -8,19 +8,17 @@ to the admin team.
 integer parameters. Refering to the MSDN documentation, it explains the usage of both parameters and the output value:
 
 
-*length
-*Type: System.Int32
+length
+Type: System.Int32
 > The number of characters in the generated password. The length must be between 1 and 128 characters. 
 
-*numberOfNonAlphanumericCharacters*
-
-*Type: System.Int32*
+numberOfNonAlphanumericCharacters
+Type: System.Int32
 > The minimum number of non-alphanumeric characters (such as @, #, !, %, &, and so on) in the generated password. 
 
-*Return Value*
-
-*Type: System.String* 
-*A random password of the specified length.*
+Return Value
+Type: System.String 
+> A random password of the specified length.
 
 To generate a single password simple pass the password length and number of special characters required:
 ```New-ComplexPassword -PasswordLength 8 -SpecialCharCount 1```
