@@ -1,4 +1,29 @@
 Function New-ComplexPassword {
+    <#
+    .SYNOPSIS
+    Password Generator
+    
+    .DESCRIPTION
+    Password Generator tool to obtain any length and numbers of passwords, 
+    adding desired number of special characters, quickly. 
+    
+    .PARAMETER PasswordLength
+    Add a integer value for desired password length
+    
+    .PARAMETER SpecialCharCount
+     Add a integer value for desired number of special characters
+    
+    .PARAMETER GenerateUserPW
+    Enter as many named string or integer values 
+    
+    .EXAMPLE
+    'John','Paul','George','Ringo' | New-ComplexPassword -PasswordLength 10 -SpecialCharCount 2
+    
+    1..5 | New-ComplexPassword -PasswordLength 16 -SpecialCharCount 5
+    
+    .NOTES
+    General notes
+    #>
     
     [Cmdletbinding(DefaultParameterSetName='Single')]
         Param(
@@ -40,3 +65,23 @@ Function New-ComplexPassword {
         } # End of Switch
     }
 } # End of Function
+
+# Obtain Overload definition
+# PS C:\demo> [System.Web.Security.Membership]::GeneratePassword
+
+# OverloadDefinitions
+# -------------------
+# static string GeneratePassword(int length, int numberOfNonAlphanumericCharacters)
+
+# Example 1
+'John','Paul','George','Ringo' | New-ComplexPassword -PasswordLength 10 -SpecialCharCount 2
+
+# Example 2
+1..5 | New-ComplexPassword -PasswordLength 16 -SpecialCharCount 5
+
+# Example 3 - quick export, using utf8 to preserve special characters
+(1..5 | New-ComplexPassword -PasswordLength 10 -SpecialCharCount 1).Password | Out-File c:\demo\demo2\Passwords.csv -Encoding utf8 -Force
+
+# Perform an input
+$i = 0
+Get-Content -Path c:\demo\demo2\Passwords.csv | foreach { $i++; "Password for number [$i]: $_"} 
