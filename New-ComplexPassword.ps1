@@ -18,7 +18,7 @@ Function New-ComplexPassword {
     
     .EXAMPLE
     'John','Paul','George','Ringo' | New-ComplexPassword -PasswordLength 10 -SpecialCharCount 2
-    
+
     1..5 | New-ComplexPassword -PasswordLength 16 -SpecialCharCount 5
     
     .NOTES
