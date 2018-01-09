@@ -22,7 +22,7 @@ Function New-ComplexPassword {
     1..5 | New-ComplexPassword -PasswordLength 16 -SpecialCharCount 5
     
     .NOTES
-    General notes
+    By Graham Beer
     #>
     
     [Cmdletbinding(DefaultParameterSetName='Single')]
